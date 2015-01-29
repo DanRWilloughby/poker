@@ -28,3 +28,18 @@ card5 = ["ace_of_diamonds","2_of_diamonds","3_of_diamonds","4_of_diamonds","5_of
 <img src="http://golearntocode.com/images/cards/<%=card3%>.png" width=200>
 <img src="http://golearntocode.com/images/cards/<%=card4%>.png" width=200>
 <img src="http://golearntocode.com/images/cards/<%=card5%>.png" width=200>
+
+# or the best way
+
+ <% 
+numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
+suits = ["diamonds", "hearts", "clubs", "spades"]
+deck = numbers.product(suits) 
+hand = deck.sample(5)
+%>
+
+<% hand.each do |card| %>
+<img src="http://golearntocode.com/images/cards/<%= card.first %>_of_<%= card.second %>.png" width=200 > 
+
+<% end %>
+
